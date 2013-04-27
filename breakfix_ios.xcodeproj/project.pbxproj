@@ -36,6 +36,7 @@
 		B36CB1BA172C444900C9F549 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36CB1B4172C444900C9F549 /* MobileCoreServices.framework */; };
 		B36CB1BB172C444900C9F549 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36CB1B5172C444900C9F549 /* Security.framework */; };
 		B36CB1BC172C444900C9F549 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36CB1B6172C444900C9F549 /* SystemConfiguration.framework */; };
+		B36CB1C2172C53E900C9F549 /* ElixrUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B36CB1C1172C53E900C9F549 /* ElixrUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		B36CB1B4172C444900C9F549 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B36CB1B5172C444900C9F549 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B36CB1B6172C444900C9F549 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B36CB1C0172C53E900C9F549 /* ElixrUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElixrUser.h; sourceTree = "<group>"; };
+		B36CB1C1172C53E900C9F549 /* ElixrUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElixrUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,8 @@
 				B36CB16E172B6E9F00C9F549 /* second.png */,
 				B36CB170172B6E9F00C9F549 /* second@2x.png */,
 				B36CB14D172B6E9F00C9F549 /* Supporting Files */,
+				B36CB1C0172C53E900C9F549 /* ElixrUser.h */,
+				B36CB1C1172C53E900C9F549 /* ElixrUser.m */,
 			);
 			path = breakfix_ios;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				B36CB157172B6E9F00C9F549 /* ElixrAppDelegate.m in Sources */,
 				B36CB166172B6E9F00C9F549 /* ElixrFirstViewController.m in Sources */,
 				B36CB16D172B6E9F00C9F549 /* ElixrSecondViewController.m in Sources */,
+				B36CB1C2172C53E900C9F549 /* ElixrUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

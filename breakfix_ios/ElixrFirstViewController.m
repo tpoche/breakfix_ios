@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Team Breakfix. All rights reserved.
 //
 
+#import <RestKit/RestKit.h>
 #import "ElixrFirstViewController.h"
+#import "ElixrUser.h"
 
 @interface ElixrFirstViewController ()
 
@@ -22,6 +24,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,5 +35,32 @@
 }
 
 - (IBAction)refreshPatientInfo:(id)sender {
+    
+    // Load the object model via RestKit
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    [objectManager getObjectsAtPath:@"/prototype/users.json"
+                   parameters:nil
+                   success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                        NSArray* userArray = [mappingResult array];
+                        NSLog(@"Loaded users: %@", userArray);
+                       
+                        if([userArray count] > 0) {
+                            NSLog(@"Array populated with values, setting to text fields now...");
+                            ElixrUser *u = userArray[0];
+                            self.textFirstName.text = u.firstName;
+                            self.textLastName.text  = u.lastName;
+                            self.textEmail.text     = u.email;
+                        }
+                    }
+                    failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                  message:[error localizedDescription]
+                                                                  delegate:nil
+                                                                  cancelButtonTitle:@"OK"
+                                                                  otherButtonTitles:nil];
+                        [alert show];
+                        NSLog(@"Hit error: %@", error);
+                    }];
 }
 @end

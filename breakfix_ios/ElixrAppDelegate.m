@@ -7,6 +7,7 @@
 //
 
 #import "ElixrAppDelegate.h"
+#import "ElixrUser.h"
 #import <RestKit/RestKit.h>
 
 @implementation ElixrAppDelegate
@@ -14,6 +15,39 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    RKLogConfigureByName("RestKit/Network*", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+    
+    //let AFNetworking manage the activity indicator
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    
+    // Initialize HTTPClient
+    NSURL *baseURL = [NSURL URLWithString:@"http://elixr-breakfix.herokuapp.com"];
+    AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    //we want to work with JSON-Data
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+    
+    // Initialize RestKit
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    
+    // Setup our object mappings
+    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[ElixrUser class]];
+    [userMapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"userID",
+     @"first_name" : @"firstName",
+     @"last_name" : @"lastName",
+     @"salutation" : @"salutation",
+     @"email" : @"email"
+     }];
+
+    // Register our mappings with the provider using a response descriptor
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping
+                                                                     pathPattern:@"/prototype/users.json"
+                                                                     keyPath:nil
+                                                                     statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    [objectManager addResponseDescriptor:responseDescriptor];
+
+    
     return YES;
 }
 							
