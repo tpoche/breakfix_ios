@@ -14,6 +14,10 @@
 
 @implementation ElixrFirstViewController
 
+@synthesize firstName = _firstName;
+@synthesize lastName  = _lastName;
+@synthesize email = _email;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -26,4 +30,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)refreshPatientInfo:(id)sender {
+}
 @end

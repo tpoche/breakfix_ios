@@ -7,6 +7,7 @@
 //
 
 #import "ElixrAppDelegate.h"
+#import <RestKit/RestKit.h>
 
 @implementation ElixrAppDelegate
 
