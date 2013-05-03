@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    [self.patientNavBar pushNavigationItem:self.navigationItem animated:NO];
 
 }
 

@@ -8,9 +8,15 @@
 
 #import "ElixrAppDelegate.h"
 #import "ElixrUser.h"
+#import "ElixrPrescription.h"
+#import "ElixrFirstViewController.h"
+#import "ElixrTableViewController.h"
 #import <RestKit/RestKit.h>
 
-@implementation ElixrAppDelegate
+@implementation ElixrAppDelegate {
+    NSMutableArray *scripts;
+    ElixrTableViewController *tableViewController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -39,6 +45,22 @@
      @"salutation" : @"salutation",
      @"email" : @"email"
      }];
+    
+    RKObjectMapping *prescriptionMapping = [RKObjectMapping mappingForClass: [ElixrPrescription class]];
+    [prescriptionMapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"prescriptionId",
+     @"user" : @"userId",
+     @"drug_name" : @"drugName",
+     @"dosage" : @"dosage",
+     @"special_info" : @"specialInfo"
+    }];
+    
+    RKObjectMapping *scheduleMapping = [RKObjectMapping mappingForClass: [ElixrSchedule class]];
+    [scheduleMapping addAttributeMappingsFromDictionary:@{@"timestamp" : @"timeStamp"}];
+    
+    [prescriptionMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"schedule"
+                                                                                        toKeyPath: @"schedule"
+                                                                                      withMapping:scheduleMapping]];
 
     // Register our mappings with the provider using a response descriptor
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping
@@ -46,11 +68,59 @@
                                                                      keyPath:nil
                                                                      statusCodes:[NSIndexSet indexSetWithIndex:200]];
     [objectManager addResponseDescriptor:responseDescriptor];
-
     
+    RKResponseDescriptor *prescriptionDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:prescriptionMapping pathPattern:@"/prototype/prescriptions.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:prescriptionDescriptor];
+    
+    // Get references to controllers
+    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
+    ElixrFirstViewController *firstViewController = [[tabBarController viewControllers] objectAtIndex:0];
+    UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:1];
+    tableViewController = [[[navigationController viewControllers] objectAtIndex:0] initWithStyle:UITableViewStylePlain];
+    [self getPrescriptionInfo];
+/*
+    if([scripts count] > 0)
+    {
+        NSLog(@"ElixrAppDelegate: Scripts array populated, sending to table view");
+        tableViewController.prescriptions = [[NSMutableArray alloc] initWithArray:scripts];
+    }
+    else
+    {
+        NSLog(@"ElixrAppDelegate: Error loading web service data into scripts array!");
+        return NO;
+    }
+*/    
     return YES;
 }
-							
+
+- (void)getPrescriptionInfo {
+    // Load the object model via RestKit
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    [objectManager getObjectsAtPath:@"/prototype/prescriptions.json"
+                         parameters:nil
+                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                NSArray* scriptArray = [mappingResult array];
+                                NSLog(@"Loaded users: %@", scriptArray);
+                                
+                                if([scriptArray count] > 0) {
+                                    NSLog(@"Array populated with values, setting to table data now...");
+                                    tableViewController.prescriptions = [[NSMutableArray alloc] initWithArray:scriptArray];
+                                }
+                            }
+                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                message:[error localizedDescription]
+                                                                               delegate:nil
+                                                                      cancelButtonTitle:@"OK"
+                                                                      otherButtonTitles:nil];
+                                [alert show];
+                                NSLog(@"Hit error: %@", error);
+                            }];
+}
+
+						
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

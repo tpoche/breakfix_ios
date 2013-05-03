@@ -21,7 +21,6 @@
 		B36CB166172B6E9F00C9F549 /* ElixrFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36CB165172B6E9F00C9F549 /* ElixrFirstViewController.m */; };
 		B36CB168172B6E9F00C9F549 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B36CB167172B6E9F00C9F549 /* first.png */; };
 		B36CB16A172B6E9F00C9F549 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B36CB169172B6E9F00C9F549 /* first@2x.png */; };
-		B36CB16D172B6E9F00C9F549 /* ElixrSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36CB16C172B6E9F00C9F549 /* ElixrSecondViewController.m */; };
 		B36CB16F172B6E9F00C9F549 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B36CB16E172B6E9F00C9F549 /* second.png */; };
 		B36CB171172B6E9F00C9F549 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B36CB170172B6E9F00C9F549 /* second@2x.png */; };
 		B36CB179172B6E9F00C9F549 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36CB178172B6E9F00C9F549 /* SenTestingKit.framework */; };
@@ -37,6 +36,14 @@
 		B36CB1BB172C444900C9F549 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36CB1B5172C444900C9F549 /* Security.framework */; };
 		B36CB1BC172C444900C9F549 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36CB1B6172C444900C9F549 /* SystemConfiguration.framework */; };
 		B36CB1C2172C53E900C9F549 /* ElixrUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B36CB1C1172C53E900C9F549 /* ElixrUser.m */; };
+		B36CB1C9172CD60500C9F549 /* ElixrPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = B36CB1C8172CD60500C9F549 /* ElixrPrescription.m */; };
+		B36CB1CC172D91BB00C9F549 /* ElixrSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = B36CB1CB172D91BB00C9F549 /* ElixrSchedule.m */; };
+		B3805B1317333C5200E1FDE7 /* ElixrTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3805B1217333C5200E1FDE7 /* ElixrTableViewController.m */; };
+		B3805B181733701200E1FDE7 /* logo_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = B3805B171733701100E1FDE7 /* logo_transparent.png */; };
+		B3805B1C1733743800E1FDE7 /* logo_transparent_sm.png in Resources */ = {isa = PBXBuildFile; fileRef = B3805B1B1733743800E1FDE7 /* logo_transparent_sm.png */; };
+		B3805B20173375B000E1FDE7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3805B1F173375B000E1FDE7 /* Default.png */; };
+		B3805B221733789100E1FDE7 /* user-tab.png in Resources */ = {isa = PBXBuildFile; fileRef = B3805B211733789100E1FDE7 /* user-tab.png */; };
+		B3805B2417337C2D00E1FDE7 /* meds-tab.png in Resources */ = {isa = PBXBuildFile; fileRef = B3805B2317337C2D00E1FDE7 /* meds-tab.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,12 +107,10 @@
 		B36CB15C172B6E9F00C9F549 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B36CB15F172B6E9F00C9F549 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B36CB162172B6E9F00C9F549 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		B36CB164172B6E9F00C9F549 /* ElixrFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElixrFirstViewController.h; sourceTree = "<group>"; };
-		B36CB165172B6E9F00C9F549 /* ElixrFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElixrFirstViewController.m; sourceTree = "<group>"; };
+		B36CB164172B6E9F00C9F549 /* ElixrFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ElixrFirstViewController.h; path = breakfix_ios/ElixrFirstViewController.h; sourceTree = "<group>"; };
+		B36CB165172B6E9F00C9F549 /* ElixrFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ElixrFirstViewController.m; path = breakfix_ios/ElixrFirstViewController.m; sourceTree = "<group>"; };
 		B36CB167172B6E9F00C9F549 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		B36CB169172B6E9F00C9F549 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		B36CB16B172B6E9F00C9F549 /* ElixrSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElixrSecondViewController.h; sourceTree = "<group>"; };
-		B36CB16C172B6E9F00C9F549 /* ElixrSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElixrSecondViewController.m; sourceTree = "<group>"; };
 		B36CB16E172B6E9F00C9F549 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		B36CB170172B6E9F00C9F549 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		B36CB177172B6E9F00C9F549 /* breakfix_iosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = breakfix_iosTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,8 +126,19 @@
 		B36CB1B4172C444900C9F549 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B36CB1B5172C444900C9F549 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B36CB1B6172C444900C9F549 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B36CB1C0172C53E900C9F549 /* ElixrUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElixrUser.h; sourceTree = "<group>"; };
-		B36CB1C1172C53E900C9F549 /* ElixrUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElixrUser.m; sourceTree = "<group>"; };
+		B36CB1C0172C53E900C9F549 /* ElixrUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElixrUser.h; path = breakfix_ios/ElixrUser.h; sourceTree = "<group>"; };
+		B36CB1C1172C53E900C9F549 /* ElixrUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElixrUser.m; path = breakfix_ios/ElixrUser.m; sourceTree = "<group>"; };
+		B36CB1C7172CD60500C9F549 /* ElixrPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElixrPrescription.h; path = breakfix_ios/ElixrPrescription.h; sourceTree = "<group>"; };
+		B36CB1C8172CD60500C9F549 /* ElixrPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElixrPrescription.m; path = breakfix_ios/ElixrPrescription.m; sourceTree = "<group>"; };
+		B36CB1CA172D91BB00C9F549 /* ElixrSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElixrSchedule.h; path = breakfix_ios/ElixrSchedule.h; sourceTree = "<group>"; };
+		B36CB1CB172D91BB00C9F549 /* ElixrSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElixrSchedule.m; path = breakfix_ios/ElixrSchedule.m; sourceTree = "<group>"; };
+		B3805B1117333C5200E1FDE7 /* ElixrTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElixrTableViewController.h; path = breakfix_ios/ElixrTableViewController.h; sourceTree = "<group>"; };
+		B3805B1217333C5200E1FDE7 /* ElixrTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElixrTableViewController.m; path = breakfix_ios/ElixrTableViewController.m; sourceTree = "<group>"; };
+		B3805B171733701100E1FDE7 /* logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_transparent.png; sourceTree = "<group>"; };
+		B3805B1B1733743800E1FDE7 /* logo_transparent_sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_transparent_sm.png; path = ../logo_transparent_sm.png; sourceTree = "<group>"; };
+		B3805B1F173375B000E1FDE7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B3805B211733789100E1FDE7 /* user-tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-tab.png"; sourceTree = "<group>"; };
+		B3805B2317337C2D00E1FDE7 /* meds-tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meds-tab.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +175,7 @@
 		B36CB13A172B6E9F00C9F549 = {
 			isa = PBXGroup;
 			children = (
+				B3805B1F173375B000E1FDE7 /* Default.png */,
 				B36CB14C172B6E9F00C9F549 /* breakfix_ios */,
 				B36CB17E172B6E9F00C9F549 /* breakfix_iosTests */,
 				B36CB145172B6E9F00C9F549 /* Frameworks */,
@@ -200,17 +217,9 @@
 				B36CB156172B6E9F00C9F549 /* ElixrAppDelegate.m */,
 				B36CB15E172B6E9F00C9F549 /* MainStoryboard_iPhone.storyboard */,
 				B36CB161172B6E9F00C9F549 /* MainStoryboard_iPad.storyboard */,
-				B36CB164172B6E9F00C9F549 /* ElixrFirstViewController.h */,
-				B36CB165172B6E9F00C9F549 /* ElixrFirstViewController.m */,
-				B36CB167172B6E9F00C9F549 /* first.png */,
-				B36CB169172B6E9F00C9F549 /* first@2x.png */,
-				B36CB16B172B6E9F00C9F549 /* ElixrSecondViewController.h */,
-				B36CB16C172B6E9F00C9F549 /* ElixrSecondViewController.m */,
-				B36CB16E172B6E9F00C9F549 /* second.png */,
-				B36CB170172B6E9F00C9F549 /* second@2x.png */,
 				B36CB14D172B6E9F00C9F549 /* Supporting Files */,
-				B36CB1C0172C53E900C9F549 /* ElixrUser.h */,
-				B36CB1C1172C53E900C9F549 /* ElixrUser.m */,
+				B3805B1D1733749800E1FDE7 /* src */,
+				B3805B1E173374EA00E1FDE7 /* img */,
 			);
 			path = breakfix_ios;
 			sourceTree = "<group>";
@@ -257,6 +266,39 @@
 				B36CB1AB172C3F8B00C9F549 /* RestKitFrameworkTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B3805B1D1733749800E1FDE7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B3805B1117333C5200E1FDE7 /* ElixrTableViewController.h */,
+				B3805B1217333C5200E1FDE7 /* ElixrTableViewController.m */,
+				B36CB164172B6E9F00C9F549 /* ElixrFirstViewController.h */,
+				B36CB165172B6E9F00C9F549 /* ElixrFirstViewController.m */,
+				B36CB1C0172C53E900C9F549 /* ElixrUser.h */,
+				B36CB1C1172C53E900C9F549 /* ElixrUser.m */,
+				B36CB1C7172CD60500C9F549 /* ElixrPrescription.h */,
+				B36CB1C8172CD60500C9F549 /* ElixrPrescription.m */,
+				B36CB1CA172D91BB00C9F549 /* ElixrSchedule.h */,
+				B36CB1CB172D91BB00C9F549 /* ElixrSchedule.m */,
+			);
+			name = src;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B3805B1E173374EA00E1FDE7 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				B3805B2317337C2D00E1FDE7 /* meds-tab.png */,
+				B3805B211733789100E1FDE7 /* user-tab.png */,
+				B3805B171733701100E1FDE7 /* logo_transparent.png */,
+				B36CB167172B6E9F00C9F549 /* first.png */,
+				B36CB169172B6E9F00C9F549 /* first@2x.png */,
+				B36CB16E172B6E9F00C9F549 /* second.png */,
+				B36CB170172B6E9F00C9F549 /* second@2x.png */,
+				B3805B1B1733743800E1FDE7 /* logo_transparent_sm.png */,
+			);
+			name = img;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +421,11 @@
 				B36CB16A172B6E9F00C9F549 /* first@2x.png in Resources */,
 				B36CB16F172B6E9F00C9F549 /* second.png in Resources */,
 				B36CB171172B6E9F00C9F549 /* second@2x.png in Resources */,
+				B3805B181733701200E1FDE7 /* logo_transparent.png in Resources */,
+				B3805B1C1733743800E1FDE7 /* logo_transparent_sm.png in Resources */,
+				B3805B20173375B000E1FDE7 /* Default.png in Resources */,
+				B3805B221733789100E1FDE7 /* user-tab.png in Resources */,
+				B3805B2417337C2D00E1FDE7 /* meds-tab.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,8 +463,10 @@
 				B36CB153172B6E9F00C9F549 /* main.m in Sources */,
 				B36CB157172B6E9F00C9F549 /* ElixrAppDelegate.m in Sources */,
 				B36CB166172B6E9F00C9F549 /* ElixrFirstViewController.m in Sources */,
-				B36CB16D172B6E9F00C9F549 /* ElixrSecondViewController.m in Sources */,
 				B36CB1C2172C53E900C9F549 /* ElixrUser.m in Sources */,
+				B36CB1C9172CD60500C9F549 /* ElixrPrescription.m in Sources */,
+				B36CB1CC172D91BB00C9F549 /* ElixrSchedule.m in Sources */,
+				B3805B1317333C5200E1FDE7 /* ElixrTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +672,7 @@
 				B36CB18B172B6E9F00C9F549 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B36CB18C172B6E9F00C9F549 /* Build configuration list for PBXNativeTarget "breakfix_iosTests" */ = {
 			isa = XCConfigurationList;
@@ -631,6 +681,7 @@
 				B36CB18E172B6E9F00C9F549 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
