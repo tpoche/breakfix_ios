@@ -8,7 +8,6 @@
 
 #import <RestKit/RestKit.h>
 #import "ElixrFirstViewController.h"
-#import "ElixrUser.h"
 
 @interface ElixrFirstViewController ()
 
@@ -16,6 +15,7 @@
 
 @implementation ElixrFirstViewController
 
+@synthesize currentUser;
 @synthesize firstName = _firstName;
 @synthesize lastName  = _lastName;
 @synthesize email = _email;
@@ -25,7 +25,27 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self.patientNavBar pushNavigationItem:self.navigationItem animated:NO];
+}
 
+- (void)initWithPatient:(ElixrUser *)patient
+{
+    if(patient)
+    {
+        NSLog(@"ElixrFirstViewController: Valid currentUser found, populating text fields");
+        self.textFirstName.text = patient.firstName;
+        self.textLastName.text = patient.lastName;
+        self.textEmail.text = patient.email;
+        self.textUserId.text = [NSString stringWithFormat:@"%@", patient.userID];
+        
+        // set currentUser variable
+        if(!currentUser)
+            self.currentUser = patient;
+    }
+    else
+    {
+        // report error
+        NSLog(@"ElixrFirstViewController: initWithPatient loaded with invalid patient object");
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,19 +61,23 @@
     
     [objectManager getObjectsAtPath:@"/prototype/users.json"
                    parameters:nil
-                   success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                   success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+                   {
                         NSArray* userArray = [mappingResult array];
                         NSLog(@"Loaded users: %@", userArray);
                        
-                        if([userArray count] > 0) {
+                        if([userArray count] > 0)
+                        {
                             NSLog(@"Array populated with values, setting to text fields now...");
                             ElixrUser *u = userArray[0];
                             self.textFirstName.text = u.firstName;
                             self.textLastName.text  = u.lastName;
                             self.textEmail.text     = u.email;
+                            self.textUserId.text    = [NSString stringWithFormat:@"%@", u.userID];
                         }
                     }
-                    failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                    failure:^(RKObjectRequestOperation *operation, NSError *error)
+                    {
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                                   message:[error localizedDescription]
                                                                   delegate:nil

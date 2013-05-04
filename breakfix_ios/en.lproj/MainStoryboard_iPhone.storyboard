@@ -60,7 +60,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeP-bJ-WyO">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="CSu-a3-sqG"/>
+                                    <constraint firstAttribute="width" constant="73" id="sxR-Kv-De5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Refresh">
@@ -82,15 +82,28 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jGX-2K-Dw2">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lou-co-5W5">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90980398654937744" green="0.92156869173049927" blue="0.93725496530532837" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstItem="jGX-2K-Dw2" firstAttribute="leading" secondItem="Lou-co-5W5" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="1cN-1l-Kge"/>
+                            <constraint firstItem="jGX-2K-Dw2" firstAttribute="leading" secondItem="UeP-bJ-WyO" secondAttribute="leading" type="default" id="5Ot-Yr-Oii"/>
                             <constraint firstItem="mPd-z8-PeZ" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="8Vy-vY-94O"/>
-                            <constraint firstItem="UeP-bJ-WyO" firstAttribute="leading" secondItem="UCz-DO-CgY" secondAttribute="leading" type="default" id="HOA-SS-9SS"/>
+                            <constraint firstItem="Lou-co-5W5" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="AaY-m7-Igz"/>
+                            <constraint firstItem="jGX-2K-Dw2" firstAttribute="leading" secondItem="UCz-DO-CgY" secondAttribute="leading" type="default" id="EvS-FK-okD"/>
                             <constraint firstAttribute="trailing" secondItem="M3y-4I-c9U" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="JjT-VD-ECc"/>
                             <constraint firstItem="UCz-DO-CgY" firstAttribute="leading" secondItem="M3y-4I-c9U" secondAttribute="leading" type="default" id="KLX-GU-5DT"/>
                             <constraint firstAttribute="bottom" secondItem="UeP-bJ-WyO" secondAttribute="bottom" constant="85" id="Kfv-HP-QS9"/>
                             <constraint firstItem="ZlY-GU-hz6" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mrd-h5-HUA"/>
+                            <constraint firstAttribute="trailing" secondItem="jGX-2K-Dw2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Nk9-Bd-8W8"/>
                             <constraint firstItem="M3y-4I-c9U" firstAttribute="leading" secondItem="qUc-9l-XIL" secondAttribute="leading" type="default" id="P5I-L0-wvi"/>
                             <constraint firstItem="RQb-fC-1rB" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Peb-DV-CwG"/>
                             <constraint firstItem="qUc-9l-XIL" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Phm-pk-IKr"/>
@@ -98,8 +111,10 @@
                             <constraint firstItem="21" firstAttribute="top" secondItem="mPd-z8-PeZ" secondAttribute="bottom" type="default" id="RoI-cX-mFS"/>
                             <constraint firstItem="mPd-z8-PeZ" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="Ski-qa-DWB"/>
                             <constraint firstItem="UCz-DO-CgY" firstAttribute="top" secondItem="M3y-4I-c9U" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Sz7-Co-mAQ"/>
+                            <constraint firstItem="Lou-co-5W5" firstAttribute="top" secondItem="16" secondAttribute="top" constant="240" id="WuI-DN-t7j"/>
                             <constraint firstItem="jhV-By-kAO" firstAttribute="top" secondItem="16" secondAttribute="top" constant="124" id="YPR-wc-XDv"/>
                             <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Zmm-k2-2L7"/>
+                            <constraint firstItem="jGX-2K-Dw2" firstAttribute="top" secondItem="UCz-DO-CgY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ade-Fg-qku"/>
                             <constraint firstAttribute="trailing" secondItem="qUc-9l-XIL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cdt-qu-Uet"/>
                             <constraint firstItem="jhV-By-kAO" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="drr-hm-orD"/>
                             <constraint firstAttribute="trailing" secondItem="UCz-DO-CgY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="f19-iw-9d7"/>
@@ -118,6 +133,7 @@
                         <outlet property="textEmail" destination="UCz-DO-CgY" id="xMI-tS-127"/>
                         <outlet property="textFirstName" destination="qUc-9l-XIL" id="sPU-zn-XXY"/>
                         <outlet property="textLastName" destination="M3y-4I-c9U" id="XpB-c9-I31"/>
+                        <outlet property="textUserId" destination="jGX-2K-Dw2" id="GYG-No-4Th"/>
                         <outlet property="tvMessage" destination="21" id="Iba-N5-HaJ"/>
                     </connections>
                 </viewController>
@@ -209,6 +225,7 @@
                 <relationship kind="outlet" name="textEmail" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="textFirstName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="textLastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textUserId" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="tvMessage" candidateClass="UITextView"/>
             </relationships>
         </class>

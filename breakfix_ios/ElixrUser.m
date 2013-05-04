@@ -10,4 +10,25 @@
 
 @implementation ElixrUser
 
+//@synthesize userID;
+//@synthesize firstName;
+//@synthesize lastName;
+//@synthesize email;
+//@synthesize salutation;
+
+-(id)initWithName:(NSString *)first last:(NSString *)last email:(NSString *)email
+{
+    self = [super init];
+    if(self)
+    {
+        _firstName = first;
+        _lastName = last;
+        _email = email;
+        _salutation = @"Sir";
+        _userID = [NSNumber numberWithInt: -1];
+        return self;
+    }
+    return nil;
+}
+
 @end

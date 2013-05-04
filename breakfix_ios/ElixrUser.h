@@ -16,4 +16,6 @@
 @property (nonatomic, copy) NSString *salutation;
 @property (nonatomic, copy) NSString *email;
 
+-(id)initWithName:(NSString *)first last:(NSString *)last email:(NSString *)email;
+
 @end

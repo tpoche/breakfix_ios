@@ -13,9 +13,12 @@
 #import "ElixrTableViewController.h"
 #import <RestKit/RestKit.h>
 
-@implementation ElixrAppDelegate {
+@implementation ElixrAppDelegate
+{
     NSMutableArray *scripts;
+    NSMutableArray *patients;
     ElixrTableViewController *tableViewController;
+    ElixrFirstViewController *firstViewController;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -75,23 +78,44 @@
     
     // Get references to controllers
     UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
-    ElixrFirstViewController *firstViewController = [[tabBarController viewControllers] objectAtIndex:0];
+    firstViewController = [[tabBarController viewControllers] objectAtIndex:0];
     UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:1];
     tableViewController = [[[navigationController viewControllers] objectAtIndex:0] initWithStyle:UITableViewStylePlain];
+    [self getPatientInfo];
     [self getPrescriptionInfo];
-/*
-    if([scripts count] > 0)
-    {
-        NSLog(@"ElixrAppDelegate: Scripts array populated, sending to table view");
-        tableViewController.prescriptions = [[NSMutableArray alloc] initWithArray:scripts];
-    }
-    else
-    {
-        NSLog(@"ElixrAppDelegate: Error loading web service data into scripts array!");
-        return NO;
-    }
-*/    
+
     return YES;
+}
+
+- (void) getPatientInfo {
+    // Load the object model via RestKit
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    [objectManager getObjectsAtPath:@"/prototype/users.json"
+                         parameters:nil
+                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+                            {
+                                NSArray* userArray = [mappingResult array];
+                                NSLog(@"Loaded users: %@", userArray);
+                                
+                                if([userArray count] > 0)
+                                {
+                                    NSLog(@"Array populated with values, setting to text fields now...");
+                                    patients = [[NSMutableArray alloc] initWithArray:userArray];
+                                    ElixrUser *first = (ElixrUser *) [patients objectAtIndex: 0];
+                                    [firstViewController initWithPatient: first];
+                                }
+                            }
+                            failure:^(RKObjectRequestOperation *operation, NSError *error)
+                            {
+                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                message:[error localizedDescription]
+                                                                               delegate:nil
+                                                                      cancelButtonTitle:@"OK"
+                                                                      otherButtonTitles:nil];
+                                [alert show];
+                                NSLog(@"Hit error: %@", error);
+                            }];
 }
 
 - (void)getPrescriptionInfo {
@@ -100,16 +124,19 @@
     
     [objectManager getObjectsAtPath:@"/prototype/prescriptions.json"
                          parameters:nil
-                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+                            {
                                 NSArray* scriptArray = [mappingResult array];
                                 NSLog(@"Loaded users: %@", scriptArray);
                                 
-                                if([scriptArray count] > 0) {
+                                if([scriptArray count] > 0)
+                                {
                                     NSLog(@"Array populated with values, setting to table data now...");
                                     tableViewController.prescriptions = [[NSMutableArray alloc] initWithArray:scriptArray];
                                 }
                             }
-                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                            failure:^(RKObjectRequestOperation *operation, NSError *error)
+                            {
                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                                                 message:[error localizedDescription]
                                                                                delegate:nil
