@@ -100,8 +100,8 @@
 		B36CB150172B6E9F00C9F549 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B36CB152172B6E9F00C9F549 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B36CB154172B6E9F00C9F549 /* breakfix_ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "breakfix_ios-Prefix.pch"; sourceTree = "<group>"; };
-		B36CB155172B6E9F00C9F549 /* ElixrAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElixrAppDelegate.h; sourceTree = "<group>"; };
-		B36CB156172B6E9F00C9F549 /* ElixrAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElixrAppDelegate.m; sourceTree = "<group>"; };
+		B36CB155172B6E9F00C9F549 /* ElixrAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ElixrAppDelegate.h; path = breakfix_ios/ElixrAppDelegate.h; sourceTree = "<group>"; };
+		B36CB156172B6E9F00C9F549 /* ElixrAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ElixrAppDelegate.m; path = breakfix_ios/ElixrAppDelegate.m; sourceTree = "<group>"; };
 		B36CB158172B6E9F00C9F549 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B36CB15A172B6E9F00C9F549 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B36CB15C172B6E9F00C9F549 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -213,8 +213,6 @@
 		B36CB14C172B6E9F00C9F549 /* breakfix_ios */ = {
 			isa = PBXGroup;
 			children = (
-				B36CB155172B6E9F00C9F549 /* ElixrAppDelegate.h */,
-				B36CB156172B6E9F00C9F549 /* ElixrAppDelegate.m */,
 				B36CB15E172B6E9F00C9F549 /* MainStoryboard_iPhone.storyboard */,
 				B36CB161172B6E9F00C9F549 /* MainStoryboard_iPad.storyboard */,
 				B36CB14D172B6E9F00C9F549 /* Supporting Files */,
@@ -271,6 +269,8 @@
 		B3805B1D1733749800E1FDE7 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				B36CB155172B6E9F00C9F549 /* ElixrAppDelegate.h */,
+				B36CB156172B6E9F00C9F549 /* ElixrAppDelegate.m */,
 				B3805B1117333C5200E1FDE7 /* ElixrTableViewController.h */,
 				B3805B1217333C5200E1FDE7 /* ElixrTableViewController.m */,
 				B36CB164172B6E9F00C9F549 /* ElixrFirstViewController.h */,
